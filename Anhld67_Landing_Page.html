@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viettel Networks | Xu thế Viễn thông & Mục tiêu 2030</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        viettel: '#EE0033',
+                        navy: {
+                            DEFAULT: '#1A1F3A',
+                            dark: '#0F172A',
+                            light: '#1E293B',
+                        },
+                        accent: {
+                            cyan: '#00D4FF',
+                            purple: '#7C3AED',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Be Vietnam Pro', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '12px',
+                        '2xl': '16px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations & Styles */
+        body { font-family: 'Inter', sans-serif; color: #0F172A; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ai-glow {
+            box-shadow: 0 0 40px -10px rgba(0, 212, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #EE0033, #7C3AED, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(238, 0, 51, 0.4);
+        }
+        .btn-hover:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #EE0033; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-[#F8F9FB] overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-viettel rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="network"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-navy">VIETTEL <span class="text-viettel">NETWORKS</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-gray-600">
+                <a href="#chien-luoc" class="hover:text-viettel transition-colors">Chiến lược</a>
+                <a href="#ai-native" class="hover:text-viettel transition-colors">AI-Native</a>
+                <a href="#muc-tieu" class="hover:text-viettel transition-colors">Mục tiêu 2030</a>
+            </div>
+            <button class="bg-viettel text-white px-6 py-2.5 rounded-full font-bold btn-hover text-sm">
+                Tài liệu VTNet
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-24 px-6 overflow-hidden bg-white">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-50/50 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-3/5 z-10">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-red-100 text-viettel text-sm font-bold mb-6">
+                    <span class="relative flex h-2 w-2 mr-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-viettel"></span>
+                    </span>
+                    Báo cáo Chiến lược 05/2026
+                </div>
+                <h1 class="text-5xl md:text-[64px] font-extrabold text-navy leading-tight mb-8">
+                    Xây dựng tương lai <br>
+                    <span class="gradient-text">Hạ tầng số Việt Nam</span>
+                </h1>
+                <p class="text-xl text-gray-500 max-w-xl mb-10 leading-relaxed">
+                    Bạn không cần biết code. Bạn chỉ cần biết mình muốn gì — <span class="font-semibold text-navy">AI sẽ làm phần còn lại.</span> Viettel Networks đang hiện thực hóa mạng thông minh tự hành.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#chien-luoc" class="bg-navy text-white px-8 py-4 rounded-full font-bold text-center btn-hover flex items-center justify-center">
+                        Khám phá lộ trình <i data-lucide="arrow-down" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    <div class="flex items-center space-x-4 px-4 py-2 border border-gray-200 rounded-2xl">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-accent-cyan flex items-center justify-center text-[10px] text-white font-bold border-2 border-white">AI</div>
+                            <div class="w-8 h-8 rounded-full bg-viettel flex items-center justify-center text-[10px] text-white font-bold border-2 border-white">5G</div>
+                            <div class="w-8 h-8 rounded-full bg-accent-purple flex items-center justify-center text-[10px] text-white font-bold border-2 border-white">6G</div>
+                        </div>
+                        <span class="text-xs font-medium text-gray-500">Định hướng hạ tầng số quốc gia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-2/5 mt-16 md:mt-0 relative">
+                <div class="animate-float relative z-10">
+                    <div class="w-full aspect-square rounded-[40px] bg-gradient-to-br from-viettel via-accent-purple to-accent-cyan p-1 ai-glow">
+                        <div class="w-full h-full bg-white rounded-[38px] overflow-hidden flex items-center justify-center p-8">
+                            <div class="relative w-full h-full border-2 border-dashed border-gray-100 rounded-3xl flex flex-col items-center justify-center">
+                                <i data-lucide="cpu" class="w-24 h-24 text-viettel/20 mb-4"></i>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-48 h-48 bg-viettel/5 rounded-full animate-pulse"></div>
+                                </div>
+                                <span class="text-gray-400 font-mono text-xs">AI-NATIVE ARCHITECTURE v1.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-cyan/20 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="chien-luoc" class="py-32 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl font-bold text-navy mb-4">5 Nhận định chiến lược</h2>
+                <div class="w-20 h-1.5 bg-viettel mx-auto rounded-full"></div>
+                <p class="mt-6 text-gray-500 max-w-2xl mx-auto">Chuyển đổi từ Hạ tầng kết nối đơn thuần sang Hạ tầng số kết nối dữ liệu quy mô quốc gia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-[#F8F9FB] border border-gray-100 hover:border-viettel/30 transition-all group reveal">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-viettel mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-navy">5G là điểm khởi đầu</h3>
+                    <p class="text-gray-500">Không phải đích đến. Tập trung năng suất chất lượng mạng, nền tảng API và ứng dụng công nghiệp.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#F8F9FB] border border-gray-100 hover:border-accent-purple/30 transition-all group reveal">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent-purple mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain-circuit"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-navy">6G là mạng AI-native</h3>
+                    <p class="text-gray-500">Đầu tư sớm về AI-RAN, phổ tần cao, chip và thiết bị IoT thông minh thế hệ mới.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#F8F9FB] border border-gray-100 hover:border-accent-cyan/30 transition-all group reveal">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent-cyan mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="landmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-navy">Hạ tầng số chiến lược</h3>
+                    <p class="text-gray-500">Liên thông: Trung tâm dữ liệu, Cloud, Cáp quang biển, Vệ tinh và Toàn cầu hóa mạng lưới.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-native" class="py-32 bg-navy text-white px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 reveal">
+                    <h2 class="text-4xl font-bold mb-8">Mạng thông minh <br><span class="text-accent-cyan">AI-Native Network</span></h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        AI không chỉ là công cụ — <span class="text-white font-bold italic">AI là kiến trúc mạng.</span> 
+                        Tích hợp vào thiết kế, vận hành, tối ưu hóa đến tận từng lõi vi mạch.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-viettel/20 flex items-center justify-center text-viettel mr-4">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block">Lớp RAN (Radio)</span>
+                                <span class="text-gray-400">Tự tối ưu búp sóng, dự báo tải, tiết kiệm 20% năng lượng cell.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-accent-purple/20 flex items-center justify-center text-accent-purple mr-4">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block">Lớp Core (Lõi)</span>
+                                <span class="text-gray-400">Phân bổ tài nguyên tự động, phát hiện bất thường & cô lập sự cố.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-accent-cyan/20 flex items-center justify-center text-accent-cyan mr-4">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block">Lớp Service (Dịch vụ)</span>
+                                <span class="text-gray-400">Cá nhân hóa QoS, chống gian lận viễn thông bằng AI theo thời gian thực.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md:w-1/2 w-full reveal">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 rounded-2xl glass-card text-center border-l-4 border-viettel">
+                            <div class="text-3xl font-bold mb-1 counter" data-target="30">0</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-widest font-bold">Giảm OPEX (%)</div>
+                        </div>
+                        <div class="p-6 rounded-2xl glass-card text-center border-l-4 border-accent-cyan">
+                            <div class="text-3xl font-bold mb-1 counter" data-target="99">0</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-widest font-bold">Uptime (%)</div>
+                        </div>
+                        <div class="p-6 rounded-2xl glass-card text-center border-l-4 border-accent-purple">
+                            <div class="text-3xl font-bold mb-1 counter" data-target="50">0</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-widest font-bold">Năng suất (X)</div>
+                        </div>
+                        <div class="p-6 rounded-2xl glass-card text-center border-l-4 border-white">
+                            <div class="text-3xl font-bold mb-1 counter" data-target="100">0</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-widest font-bold">Tự động hóa (%)</div>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-1 rounded-2xl bg-gradient-to-r from-viettel via-accent-purple to-accent-cyan">
+                        <div class="bg-navy-dark p-6 rounded-xl flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                                <span class="text-sm font-mono">Neural Engine: Active</span>
+                            </div>
+                            <span class="text-xs text-gray-500 font-mono italic">Verifying network slicing...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="muc-tieu" class="py-32 bg-[#F8F9FB] px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl font-bold text-navy mb-4">Mục tiêu Hạ tầng số 2030</h2>
+                <p class="text-gray-500">Căn cứ theo quyết định 1132/QĐ-TTg của Thủ tướng Chính phủ.</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-xl bg-white reveal">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-navy text-white">
+                            <th class="p-6 font-bold">Chỉ tiêu định hướng 2030</th>
+                            <th class="p-6 font-bold text-center">Con số kỳ vọng</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-navy">
+                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                            <td class="p-6 font-medium">Băng thông rộng cố định (Tốc độ tối thiểu)</td>
+                            <td class="p-6 text-center font-bold text-viettel">1 Gbps / người dùng</td>
+                        </tr>
+                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                            <td class="p-6 font-medium">Độ phủ sóng 5G toàn quốc</td>
+                            <td class="p-6 text-center font-bold text-viettel">99% dân số</td>
+                        </tr>
+                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                            <td class="p-6 font-medium">Số lượng tuyến cáp quang biển</td>
+                            <td class="p-6 text-center font-bold text-viettel">≥ 26 tuyến (dung lượng 350 Tbps)</td>
+                        </tr>
+                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                            <td class="p-6 font-medium">Trung tâm dữ liệu siêu lớn (Hyperscale)</td>
+                            <td class="p-6 text-center font-bold text-viettel">02 Hub khu vực</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-6 font-medium">IoT trên 1km²</td>
+                            <td class="p-6 text-center font-bold text-viettel">≥ 4 kết nối</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-12 p-8 rounded-2xl bg-red-50 border border-red-100 flex items-center space-x-6 reveal">
+                <div class="hidden sm:flex w-16 h-16 bg-viettel rounded-full items-center justify-center text-white shrink-0">
+                    <i data-lucide="alert-circle"></i>
+                </div>
+                <p class="text-viettel font-medium leading-relaxed">
+                    <span class="font-bold">Lưu ý chiến lược:</span> Không nên coi 5G chỉ là dịch vụ tốc độ cao cho người dùng cá nhân. Thiếu 5G SA + Edge Cloud + API mạng, 6G sẽ trở nên thiếu nền tảng để bứt phá sản xuất công nghiệp.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold text-navy mb-4 italic">6G - IMT/2030</h2>
+                    <p class="text-gray-500">Vượt xa kết nối, hướng tới tương lai cảm biến, dữ liệu và AI toàn diện.</p>
+                </div>
+                <div class="hidden md:block">
+                    <span class="text-navy font-bold text-xs uppercase tracking-widest bg-gray-100 px-4 py-2 rounded-full">Phase: Nghiên cứu sớm</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-lg transition-all group reveal">
+                    <div class="text-viettel mb-4 group-hover:rotate-12 transition-transform"><i data-lucide="video"></i></div>
+                    <h4 class="font-bold text-navy mb-2">Hologram Communications</h4>
+                    <p class="text-sm text-gray-500">Trải nghiệm tương tác 3D chân thực theo thời gian thực.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-lg transition-all group reveal">
+                    <div class="text-accent-purple mb-4 group-hover:rotate-12 transition-transform"><i data-lucide="microscope"></i></div>
+                    <h4 class="font-bold text-navy mb-2">Sensing & Comms</h4>
+                    <p class="text-sm text-gray-500">Mạng lưới tự nhận diện môi trường, phục vụ giao thông thông minh.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-2xl hover:shadow-lg transition-all group reveal">
+                    <div class="text-accent-cyan mb-4 group-hover:rotate-12 transition-transform"><i data-lucide="wifi"></i></div>
+                    <h4 class="font-bold text-navy mb-2">Ubiquitous Connectivity</h4>
+                    <p class="text-sm text-gray-500">Kết nối vạn vật, từ dưới biển sâu đến không gian vũ trụ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-dark text-white py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-10">TRÂN TRỌNG CẢM ƠN!</h2>
+            <p class="text-gray-400 mb-12 max-w-xl mx-auto italic font-light">
+                Khối Nghiên cứu & Chiến lược Số | Tổng Công ty Mạng lưới Viettel (VTNet) <br>
+                Phiên bản 1.0 - Tài liệu nội bộ, không phân phối ra ngoài.
+            </p>
+            <div class="flex justify-center space-x-6 mb-16">
+                <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-viettel transition-colors"><i data-lucide="globe"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-viettel transition-colors"><i data-lucide="mail"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-viettel transition-colors"><i data-lucide="linkedin"></i></a>
+            </div>
+            <div class="text-gray-600 text-xs font-mono uppercase tracking-[0.2em]">
+                &copy; 2026 VIETTEL NETWORKS STRATEGY DEPT.
+            </div>
+        </div>
+    </footer>
+
+    <div id="fomo-toast" class="fixed bottom-8 right-8 bg-white p-4 rounded-2xl shadow-2xl border-l-4 border-viettel flex items-center space-x-4 translate-x-[200%] transition-transform duration-500 z-[100]">
+        <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-viettel">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <p class="text-xs text-gray-500 font-medium">Báo cáo cập nhật</p>
+            <p class="text-sm font-bold text-navy">VTNet đã kích hoạt AI-RAN v1.0</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Counting Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                const updateCount = () => {
+                    const current = +counter.innerText;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // 2. Scroll Reveal Animation
+        const reveal = () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        // 3. FOMO Toast Trigger
+        const showFomo = () => {
+            const toast = document.getElementById('fomo-toast');
+            setTimeout(() => {
+                toast.style.transform = 'translateX(0)';
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(200%)';
+                }, 5000);
+            }, 3000);
+        };
+
+        // Initialize scroll events
+        window.addEventListener('scroll', () => {
+            reveal();
+            // Start counter when visible
+            const statsSection = document.getElementById('ai-native');
+            const statsPos = statsSection.getBoundingClientRect().top;
+            if(statsPos < window.innerHeight) {
+                if(!counters[0].classList.contains('started')) {
+                    startCounters();
+                    counters[0].classList.add('started');
+                }
+            }
+        });
+
+        // Run on load
+        window.onload = () => {
+            reveal();
+            showFomo();
+        };
+
+        // Sticky Nav logic
+        window.onscroll = function() {
+            const nav = document.querySelector('nav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('shadow-md', 'h-16');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('shadow-md', 'h-16');
+                nav.classList.add('h-20');
+            }
+        };
+    </script>
+</body>
+</html>
